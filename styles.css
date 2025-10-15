@@ -232,6 +232,9 @@ section {
 }
 
 /* --- Testimonials Section --- */
+#testimonials {
+    background-color: var(--light-color);
+}
 .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -363,19 +366,21 @@ section {
         font-size: 2rem;
     }
     
+    /* HIDE the navigation links by default on mobile */
     .nav-links {
-        display: none;
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 80px; /* Navbar height */
+        top: 80px; /* Position it below the header */
         left: 0;
         width: 100%;
-        background: var(--light-color);
+        background: var(--light-color); /* Add a background */
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         padding: 10px 0;
     }
     
+    /* This class, added by JavaScript, will SHOW the menu */
     .nav-links.active {
         display: flex;
     }
@@ -384,10 +389,12 @@ section {
         margin: 15px 0;
     }
 
+    /* SHOW the hamburger icon on mobile */
     .hamburger {
         display: block;
     }
     
+    /* HIDE the "Call" button on mobile to save space */
     .nav-cta {
         display: none;
     }
