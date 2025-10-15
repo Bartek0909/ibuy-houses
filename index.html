@@ -147,11 +147,15 @@
         // --- JavaScript for Mobile Menu and FAQ ---
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
+        const hamburgerIcon = hamburger.querySelector('i');
 
         hamburger.addEventListener('click', () => {
+            // Toggle the .active class on the nav menu to show/hide it
             navLinks.classList.toggle('active');
-            hamburger.querySelector('i').classList.toggle('fa-bars');
-            hamburger.querySelector('i').classList.toggle('fa-times');
+
+            // Toggle the icon between bars and a closing 'X'
+            hamburgerIcon.classList.toggle('fa-bars');
+            hamburgerIcon.classList.toggle('fa-times');
         });
         
         const faqItems = document.querySelectorAll('.faq-item');
@@ -159,12 +163,10 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                // Close other active items
                 const activeItem = document.querySelector('.faq-item.active');
                 if (activeItem && activeItem !== item) {
                     activeItem.classList.remove('active');
                 }
-                // Toggle current item
                 item.classList.toggle('active');
             });
         });
